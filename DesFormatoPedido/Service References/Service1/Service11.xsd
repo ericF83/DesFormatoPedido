@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ServiceBB.DataContract" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ServiceBB.DataContract" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:62544/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ServiceBB" />
+  <xs:complexType name="ArrayOfDC_Articulos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DC_Articulos" nillable="true" type="tns:DC_Articulos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDC_Articulos" nillable="true" type="tns:ArrayOfDC_Articulos" />
+  <xs:complexType name="DC_Articulos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="articulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="colortalla" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="familia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="grupo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="modelo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="opcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sub" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipos" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DC_Articulos" nillable="true" type="tns:DC_Articulos" />
+  <xs:complexType name="DC_datosCte">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ciudad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="edo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="municipio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DC_datosCte" nillable="true" type="tns:DC_datosCte" />
+  <xs:complexType name="DC_venta">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ServiceBB" minOccurs="0" name="Detalle" nillable="true" type="q1:ArrayOfVentaDstruct" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ServiceBB" minOccurs="0" name="Venta" nillable="true" type="q2:ArrayOfVentaStruct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DC_venta" nillable="true" type="tns:DC_venta" />
+</xs:schema>

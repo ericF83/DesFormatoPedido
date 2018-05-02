@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ServiceBB" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ServiceBB" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:62544/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfVentaDstruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VentaDstruct" type="tns:VentaDstruct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVentaDstruct" nillable="true" type="tns:ArrayOfVentaDstruct" />
+  <xs:complexType name="VentaDstruct">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Articulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cantidad" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Renglon" type="xs:int" />
+      <xs:element minOccurs="0" name="RenglonID" type="xs:int" />
+      <xs:element minOccurs="0" name="RenglonTipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubCuenta" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VentaDstruct" nillable="true" type="tns:VentaDstruct" />
+  <xs:complexType name="ArrayOfVentaStruct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VentaStruct" type="tns:VentaStruct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVentaStruct" nillable="true" type="tns:ArrayOfVentaStruct" />
+  <xs:complexType name="VentaStruct">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Concepto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Directo" type="xs:int" />
+      <xs:element minOccurs="0" name="Empresa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Moneda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mov" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prioridad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RenglonID" type="xs:int" />
+      <xs:element minOccurs="0" name="ServicioSerie" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoCambio" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VentaStruct" nillable="true" type="tns:VentaStruct" />
+</xs:schema>
